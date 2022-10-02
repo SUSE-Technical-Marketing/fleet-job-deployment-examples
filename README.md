@@ -1,2 +1,3 @@
-# fleet-job-deployment-examples
-Examples of Kubernetes Jobs deployment strategies with Rancher Fleet
+#Tips for Kubernetes Jobs deployment strategies in Continuous Delivery scenarios
+
+Examples about how to deal with immutable Job updates.
