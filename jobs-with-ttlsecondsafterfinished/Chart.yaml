@@ -1,0 +1,5 @@
+apiVersion: v2
+name: job-with-ttlsecondsafterfinished
+description: Sample application to deploy a Job with a self removal timer
+version: 1.0.0
+appVersion: 1.0.0
