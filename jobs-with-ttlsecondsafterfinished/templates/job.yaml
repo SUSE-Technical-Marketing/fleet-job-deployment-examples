@@ -1,0 +1,36 @@
+apiVersion: batch/v1
+kind: Job
+metadata:
+  name: job-with-ttlsecondsafterfinished
+spec:
+  ttlSecondsAfterFinished: 5
+  template:
+    spec:
+      restartPolicy: Never
+      containers:
+      - name: app-dog
+        image: k8s.gcr.io/busybox
+        command: [ "sh", "-c"]
+        args: ["while  true; do echo -en 'PI decimals: {{ .Values.piplaces }}.\n'; printenv MY_NODE_NAME MY_POD_NAME MY_POD_NAMESPACE; sleep 30;  break;       done; "]
+        env:
+          - name: MY_NODE_NAME
+            valueFrom:
+              fieldRef:
+                fieldPath: spec.nodeName
+          - name: MY_POD_NAME
+            valueFrom:
+              fieldRef:
+                fieldPath: metadata.name
+          - name: MY_POD_NAMESPACE
+            valueFrom:
+              fieldRef:
+                fieldPath: metadata.namespace
+          - name: MY_POD_IP
+            valueFrom:
+              fieldRef:
+                fieldPath: status.podIP
+          - name: MY_POD_SERVICE_ACCOUNT
+            valueFrom:
+              fieldRef:
+                fieldPath: spec.serviceAccountName
+  backoffLimit: 4
