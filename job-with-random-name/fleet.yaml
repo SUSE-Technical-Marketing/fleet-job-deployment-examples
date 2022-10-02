@@ -1,0 +1,7 @@
+namespace: fleet-job-with-random-name
+
+# Custom helm options
+helm:
+  # Number of PI decimals to be calculated
+  values:
+    piplaces: 20
