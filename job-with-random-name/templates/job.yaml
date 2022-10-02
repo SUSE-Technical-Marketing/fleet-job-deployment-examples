@@ -2,7 +2,7 @@
 apiVersion: batch/v1
 kind: Job
 metadata:
-  name: {{ .Release.Name }}-{{ randAlphaNum 8 | lower }}
+  name: job-with-random-name-{{ randAlphaNum 8 | lower }}
   labels:
     realname: job-with-random-name
 spec:
