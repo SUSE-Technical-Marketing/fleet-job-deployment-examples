@@ -1,0 +1,6 @@
+
+apiVersion: v2
+name: job-with-random-name
+description: Sample application to deploy a Job with a random name
+version: 1.0.0
+appVersion: 1.0.0
