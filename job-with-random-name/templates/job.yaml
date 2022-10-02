@@ -13,7 +13,7 @@ spec:
       - name: app-dog
         image: k8s.gcr.io/busybox
         command: [ "sh", "-c"]
-        args: ["while  true; do echo -en 'PI decimals: {{ .Values.piplaces }}.\n'; printenv MY_NODE_NAME MY_POD_NAME MY_POD_NAMESPACE; sleep 60;  break;       done; "]
+        args: ["while  true; do echo -en 'PI decimals: {{ .Values.piplaces }}.\n'; printenv MY_NODE_NAME MY_POD_NAME MY_POD_NAMESPACE; sleep 30;  break;       done; "]
         env:
           - name: MY_NODE_NAME
             valueFrom:
