@@ -2,7 +2,7 @@ apiVersion: fleet.cattle.io/v1alpha1
 kind: GitRepo
 metadata:
   name: jobs-with-ttlsecondsafterfinished
-  namespace: fleet-default
+  namespace: fleet-local
 spec:
   branch: main
   paths:
